@@ -1,47 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+    getContext() {
+      print(context.runtimeType);
+    }
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyFirstWidget(),
+    getContext();
+
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My First App',
+      color: Colors.red,
+      home: MyFirstWidget(),
     );
   }
 }
 
-class MyFirstWidget extends StatefulWidget {
+class MyFirstWidget extends StatelessWidget {
   const MyFirstWidget({Key? key}) : super(key: key);
 
-  @override
-  State<MyFirstWidget> createState() => _MyFirstWidgetState();
-}
-
-class _MyFirstWidgetState extends State<MyFirstWidget> {
-  int _count = 0;
+    // getContext() {
+    //   print(context.runtimeType);
+    // }
 
   @override
   Widget build(BuildContext context) {
-
-    setState(() {
-      _count++;
-    });
-    
-    print('Счетчик: $_count');
+    // getContext();
 
     return Container(
-      child: const Center(
-        child: Text('Hello!'),
-      ),
-    );
+        child: const Center(
+      child: Text('Hello!'),
+    ));
   }
 }
