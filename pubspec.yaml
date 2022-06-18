@@ -29,11 +29,11 @@ flutter:
 
   uses-material-design: true
 
-  # assets:
-  #   - res/
+  assets:
+    - res/
 
-  # fonts:
-  #   - family: Roboto
-  #     fonts:
-  #       - asset: res/fonts/RobotoMedium.ttf
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: res/fonts/RobotoMedium.ttf
 
