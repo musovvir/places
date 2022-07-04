@@ -1,10 +1,10 @@
 class Sight {
-  String? name;
-  String? lat;
-  String? lon;
-  String? url;
-  String? details;
-  String? type;
+  final String name;
+  final String lat;
+  final String lon;
+  final String url;
+  final String details;
+  final String type;
 
   Sight({
     required this.name,
