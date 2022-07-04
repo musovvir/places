@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/screen/app_strings.dart';
 
+// Поверхностная информация про место
 class SightCard extends StatelessWidget {
-  Sight sight;
+  final Sight sight;
   
-  SightCard({
+  const SightCard({
     Key? key,
     required this.sight,
   }) : super(key: key);
@@ -37,7 +39,7 @@ class SightCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 alignment: Alignment.topLeft,
-                child: Text(sight.type!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+                child: Text(sight.type, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
                 ),
               Container(
                 padding: const EdgeInsets.all(20),
@@ -52,8 +54,8 @@ class SightCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(sight.name!, style: const TextStyle(fontSize: 16, color: Color.fromRGBO(59, 62, 91, 1),)),
-                Text(sight.details!, textAlign: TextAlign.left, style: const TextStyle(color: Color.fromRGBO(124, 126, 146, 1), fontSize: 14)),
+                Text(sight.name, style: const TextStyle(fontSize: 16, color: Color.fromRGBO(59, 62, 91, 1),)),
+                const Text(AppStrings.shortDescription, textAlign: TextAlign.left, style: TextStyle(color: Color.fromRGBO(124, 126, 146, 1), fontSize: 14)),
               ],
             ),
           ),
