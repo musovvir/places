@@ -19,14 +19,17 @@ class _SightListScreenState extends State<SightListScreen> {
   final widgets = mocks.map((sight) => SightCard(sight: sight)).toList();
   
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 150,
-        centerTitle: false,
-        elevation: 0.0,
-        backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
-        title: const Text(AppStrings.listPlaces,
-            style:
-                TextStyle(color: Color.fromRGBO(59, 62, 91, 1), fontSize: 32),),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120.0),
+        child: AppBar(
+          toolbarHeight: 150,
+          centerTitle: false,
+          elevation: 0.0,
+          backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
+          title: const Text(AppStrings.listPlaces,
+              style:
+                  TextStyle(color: Color.fromRGBO(59, 62, 91, 1), fontSize: 32),),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
