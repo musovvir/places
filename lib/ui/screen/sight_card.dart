@@ -17,8 +17,6 @@ class SightCard extends StatelessWidget {
       aspectRatio: 3/2,
       child: Container(
         margin: const EdgeInsets.all(16),
-        width: 360,
-        height: 192,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: const Color.fromRGBO(245, 245, 245, 1),
@@ -28,7 +26,7 @@ class SightCard extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  width: 360,
+                  width: double.infinity,
                   height: 96,
                   decoration: const BoxDecoration(
                     color:  Colors.green,
