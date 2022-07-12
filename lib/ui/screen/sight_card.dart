@@ -73,7 +73,6 @@ class SightCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(sight.name, style: const TextStyle(fontSize: 16, color: Color.fromRGBO(59, 62, 91, 1),),),
-                const SizedBox(height: 2),
                 const Text(AppStrings.shortDescription, textAlign: TextAlign.left, style: TextStyle(color: Color.fromRGBO(124, 126, 146, 1), fontSize: 14)),
               ],
             ),
