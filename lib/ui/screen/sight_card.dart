@@ -29,10 +29,28 @@ class SightCard extends StatelessWidget {
                 width: 360,
                 height: 96,
                 decoration: const BoxDecoration(
-                  color:  Colors.green,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
+                  ),
+                ),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),),
+                  child: Image.network(sight.url, fit: BoxFit.cover, loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      
+                      return Center(child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                          ? loadingProgress.cumulativeBytesLoaded /
+                              loadingProgress.expectedTotalBytes!
+                          : null,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
@@ -54,7 +72,8 @@ class SightCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(sight.name, style: const TextStyle(fontSize: 16, color: Color.fromRGBO(59, 62, 91, 1),)),
+                Text(sight.name, style: const TextStyle(fontSize: 16, color: Color.fromRGBO(59, 62, 91, 1),),),
+                const SizedBox(height: 2),
                 const Text(AppStrings.shortDescription, textAlign: TextAlign.left, style: TextStyle(color: Color.fromRGBO(124, 126, 146, 1), fontSize: 14)),
               ],
             ),
