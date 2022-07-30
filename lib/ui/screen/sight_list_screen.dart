@@ -11,12 +11,12 @@ class SightListScreen extends StatefulWidget {
 }
 
 class _SightListScreenState extends State<SightListScreen> {
-  final mocksData = mocks;
+  final mocksData = sights;
 
   @override
   Widget build(BuildContext context) {
 
-  final widgets = mocks.map((sight) => SightCard(sight: sight)).toList();
+  final widgets = sights.map((sight) => SightCard(sight: sight)).toList();
   
     return Scaffold(
       appBar: PreferredSize(
@@ -40,12 +40,3 @@ class _SightListScreenState extends State<SightListScreen> {
     );
   }
 }
-
-// class _AppBar extends StatelessWidget {
-//   const _AppBar({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return PreferredSizeWidget();
-//   }
-// }
