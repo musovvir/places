@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/ui/screen/app_strings.dart';
 
 // Поверхностная информация про место
-class SightCard extends StatelessWidget {
-  final Sight sight;
+class SightToVisitCard extends StatelessWidget {
+  final Sight sightToVisit;
 
-  const SightCard({
+  const SightToVisitCard({
     Key? key,
-    required this.sight,
+    required this.sightToVisit,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 6 / 3,
+      aspectRatio: 3 / 2,
       child: Container(
         margin: const EdgeInsets.all(16),
         width: double.infinity,
@@ -41,7 +40,7 @@ class SightCard extends StatelessWidget {
                       topRight: Radius.circular(20),
                     ),
                     child: Image.network(
-                      sight.url,
+                      sightToVisit.url,
                       fit: BoxFit.cover,
                       loadingBuilder: (context, child, loadingProgress) {
                         if (loadingProgress == null) {
@@ -64,7 +63,7 @@ class SightCard extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   alignment: Alignment.topLeft,
                   child: Text(
-                    sight.type,
+                    sightToVisit.type,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
@@ -74,9 +73,13 @@ class SightCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   alignment: Alignment.topRight,
-                  child: const Icon(
-                    Icons.favorite_border_outlined,
-                    color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      Icon(Icons.share, color: Colors.white),
+                      SizedBox(width: 10),
+                      Icon(Icons.close, color: Colors.white),
+                    ],
                   ),
                 ),
               ],
@@ -88,18 +91,27 @@ class SightCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    sight.name,
+                    sightToVisit.name,
                     style: const TextStyle(
                       fontSize: 16,
                       color: Color.fromRGBO(59, 62, 91, 1),
                     ),
                   ),
-                  const Text(
-                    AppStrings.shortDescription,
+                  const SizedBox(height: 2),
+                  Text(
+                    sightToVisit.visit!,
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Color.fromRGBO(124, 126, 146, 1),
+                    style: const TextStyle(
+                      color: Color.fromRGBO(76, 175, 80, 1),
                       fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    sightToVisit.workingTime,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Color.fromRGBO(124, 126, 146, 1),
                     ),
                   ),
                 ],

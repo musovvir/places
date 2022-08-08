@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/screen/sight_details.dart';
+// import 'package:places/ui/screen/sight_details.dart';
+import 'package:places/ui/screen/visiting_screen.dart';
 // import 'package:places/ui/screen/sight_list_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final mocksData = mocks;
+  final mocksData = sights;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +24,9 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       title: 'My First App',
       color: Colors.red,
-      home: SightDetails(sight: mocksData[0]),
+      home: const VisitingScreen(),
     );
   }
 }
+
+// home: SightDetails(sight: mocksData[0]),
